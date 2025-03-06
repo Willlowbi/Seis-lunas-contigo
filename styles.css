@@ -172,7 +172,7 @@ h1 {
 /* Media query para dispositivos móviles */
 @media (max-width: 768px) {
   .container {
-    max-width: 85%; /* Ajustamos para móviles */
+    max-width: 85%;
     margin: 20px auto;
   }
 
@@ -187,17 +187,25 @@ h1 {
   .poema {
     font-size: 1rem;
   }
+
+  .firma {
+    font-size: 1.4rem;
+  }
 }
 
 /* Media query para dispositivos muy pequeños */
 @media (max-width: 480px) {
   .container {
-    max-width: 85%; /* Casi todo el ancho en móviles pequeños */
+    max-width: 85%;
     margin: 10px auto;
   }
 
   .carta {
     padding: 20px;
+  }
+
+  .firma {
+    font-size: 1.4rem;
   }
 }
 
