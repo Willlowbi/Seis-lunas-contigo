@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Dancing+Script&display=swap");
+
+html,
+* {
+  box-sizing: border-box; /* Previene problemas de dimensiones con padding */
+}
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden; /* Oculta el desplazamiento horizontal */
+  overflow-y: auto;
+}
+
+body {
+  background-color: #fff5f5;
+  font-family: "Playfair Display", serif;
+  color: #4a4a4a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDUwIDUwIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiNmZGUyZTYiIGQ9Ik0yNSA0MmMyLjM4IDAgNC41LS44MTMgNi4yLTIuMTggMS43LTEuMzY3IDIuOC0zLjI0IDIuOC01LjMyIDAtMS4wOC0uMzctMi4xNi0xLjAyLTMuMDQtLjY2LS44OC0xLjYtMS42LTIuNzgtMi4xMy0xLjEyLS41LTIuMjgtLjc1LTMuNDktLjc1LTIuMzggMC00LjUuODEzLTYuMiAyLjE4LTEuNyAxLjM2Ny0yLjggMy4yNC0yLjggNS4zMnMxLjA1IDMuOTUzIDIuNzUgNS4zMmMxLjcgMS4zNjcgMy44MiAyLjE4IDYuMTkgMi4xOHoiLz48L2c+PC9zdmc+");
+  min-height: 100vh;
+  padding: 20px 0;
+}
+
+.container {
+  max-width: 55%; /* Cambiado a 55% como solicitado */
+  margin: 40px auto; /* Centrado */
+  position: relative;
+  z-index: 2;
+}
+
+.carta {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.carta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: linear-gradient(to right, #e66465, #9198e5);
+  z-index: 2;
+}
+
+h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.8rem;
+  color: #d23669;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.poema {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  text-align: justify;
+  position: relative;
+  z-index: 2;
+}
+
+.poema p {
+  margin-bottom: 20px;
+}
+
+.flores {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  z-index: 0;
+  opacity: 0.15;
+}
+
+.flor1 {
+  top: -20px;
+  left: -20px;
+  transform: rotate(-15deg);
+}
+
+.flor2 {
+  bottom: -30px;
+  right: -20px;
+  transform: rotate(15deg);
+}
+
+.firma {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.5rem;
+  text-align: right;
+  margin-top: 40px;
+  color: #d23669;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.firma-corazon {
+  width: 28px;
+  height: 28px;
+  margin-left: 10px;
+  display: inline-block;
+  animation: latido 2s infinite;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.firma-corazon path {
+  stroke: #2ecc71;
+  stroke-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.firma-corazon:before,
+.firma-corazon:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 13px; /* Mitad del ancho + un poco menos */
+  height: 20px; /* Ligeramente menor que la altura */
+  border-radius: 13px 13px 0 0;
+  background-color: #2ecc71;
+}
+
+.firma-corazon:before {
+  left: 0;
+  transform: rotate(-50deg);
+  transform-origin: 100% 0;
+}
+
+.firma-corazon:after {
+  right: 0;
+  transform: rotate(50deg);
+  transform-origin: 0 0;
+}
+
+/* Estilo para la animación de latido */
+@keyframes latido {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.firma-corazon {
+  margin-left: 10px;
+  animation: latido 2s infinite;
+  transform-origin: center;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+  .container {
+    max-width: 85%; /* Ajustamos para móviles */
+    margin: 20px auto;
+  }
+
+  .carta {
+    padding: 25px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .poema {
+    font-size: 1rem;
+  }
+}
+
+/* Media query para dispositivos muy pequeños */
+@media (max-width: 480px) {
+  .container {
+    max-width: 85%; /* Casi todo el ancho en móviles pequeños */
+    margin: 10px auto;
+  }
+
+  .carta {
+    padding: 20px;
+  }
+}
+
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  transform: rotate(45deg);
+  opacity: 0.7;
+  animation: fall linear 1;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: inherit;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -7.5px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: -7.5px;
+}
+
+@keyframes fall {
+  0% {
+    transform: translate(0, -10%) rotate(45deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(var(--tx), 110%) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Estilos para los pétalos */
+.petals-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.petal {
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  background-color: #ffb6c1;
+  border-radius: 100% 0;
+  transform-origin: bottom right;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(var(--rotation));
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1) rotate(calc(var(--rotation) + 10deg));
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8) rotate(calc(var(--rotation) + 20deg));
+  }
+}
